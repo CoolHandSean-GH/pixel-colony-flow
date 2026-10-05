@@ -1,36 +1,19 @@
-# Pixel Forge
+# Nest Flow
 
-An original, touch-first pixel-by-number puzzle inspired by satisfying color-clear games. It is a dependency-free Progressive Web App (PWA), designed for iPhone and playable offline after the first visit.
+An original, installable ant-colony sorting puzzle for iPhone. This version uses the actual core loop shown in the reference: tap exposed ant boxes, manage five waiting slots, and let ants remove only matching blocks currently reachable from open space.
 
-## Play locally
+## Core gameplay
 
-```bash
-python3 -m http.server 8080
-```
+- Tap only the top box in one of four stacks.
+- The selected box enters one of five colony slots.
+- Ants automatically remove reachable blocks of the matching color.
+- Buried colors remain waiting until another color exposes them.
+- A box leaves its slot when its displayed quantity reaches zero.
+- Filling all five slots with colors that cannot reach a block jams the colony.
+- Remove the entire layered picture to win.
 
-Open `http://localhost:8080`.
+## Install on iPhone
 
-## Publish with GitHub Pages
+Enable GitHub Pages with **Settings → Pages → Source: GitHub Actions**. Open the deployed site in Safari, tap **Share → Add to Home Screen**, and leave **Open as Web App** enabled.
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, select **GitHub Actions** as the source.
-3. Run the included **Deploy to GitHub Pages** workflow, or push to `main`.
-4. Open the deployed URL in Safari on iPhone.
-5. Tap **Share → Add to Home Screen**, keep **Open as Web App** enabled, then tap **Add**.
-
-## Features
-
-- Four original 20×20 pixel-art missions
-- Tap or drag to fill matching numbered pixels
-- Hints, zoom, sound, haptics, progress saving, and mission selection
-- Responsive phone/tablet/desktop layout
-- Web app manifest, Home Screen icon, and offline service worker
-- No framework, ads, analytics, account, or external assets
-
-## Customize
-
-Edit `rawLevels` and `COLORS` in `app.js`. Each level contains 20 strings of 20 digits: `0` is blank and `1`–`9` select palette colors.
-
-## License
-
-MIT. The code and artwork in this repository are original and do not reuse assets or branding from the reference game.
+The game is an offline-capable PWA with original code, artwork, name, and interface. It does not copy Colony Flow assets or branding.
