@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#111936">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pixel Forge">
+  <meta name="description" content="A satisfying pixel-by-number puzzle that works offline.">
+  <title>Pixel Forge</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-label="Pixel Forge game">
+    <header class="topbar">
+      <div class="brand" aria-label="Pixel Forge">
+        <span class="brand-mark">◆</span>
+        <div><strong>PIXEL</strong><em>FORGE</em></div>
+      </div>
+      <div class="top-actions">
+        <button id="soundBtn" class="round-btn" aria-label="Toggle sound">♪</button>
+        <button id="installBtn" class="install-btn" hidden>Install</button>
+      </div>
+    </header>
+
+    <section class="status-card" aria-live="polite">
+      <div><span id="levelLabel" class="eyebrow">MISSION 1</span><h1 id="levelName">Starship</h1></div>
+      <div class="progress-wrap"><span id="percentText">0%</span><div class="progress"><i id="progressBar"></i></div></div>
+    </section>
+
+    <section class="board-shell">
+      <canvas id="gameCanvas" aria-label="Pixel art puzzle board"></canvas>
+      <div id="winPanel" class="win-panel" hidden>
+        <div class="win-badge">★</div><h2>Picture complete!</h2><p id="winStats">Perfect work.</p>
+        <button id="nextBtn" class="primary-btn">Next mission</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div id="palette" class="palette" aria-label="Color palette"></div>
+      <div class="utility-row">
+        <button id="hintBtn" class="utility-btn"><span>✦</span> Hint <b id="hintCount">3</b></button>
+        <button id="zoomBtn" class="utility-btn"><span>⌕</span> Zoom</button>
+        <button id="levelsBtn" class="utility-btn"><span>▦</span> Missions</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="levelsDialog"><form method="dialog" class="dialog-card">
+    <header><div><span class="eyebrow">SELECT</span><h2>Missions</h2></div><button value="cancel" aria-label="Close">×</button></header>
+    <div id="levelList" class="level-list"></div>
+  </form></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
